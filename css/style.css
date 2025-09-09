@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(180deg, #EEAECA, #94BBE9);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    text-align: center;
+    user-select: none;   /* Disable text selection */
+  }
+  h1 {
+    margin: 20px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+  }
+  #bin {
+    position: fixed;   /* Stick to bottom-right */
+    bottom: 20px;
+    right: 20px;
+    font-size: 70px;
+    background-color: rgba(238, 232, 232, 0.5);
+    border-radius: 20px;
+    padding: 10px;
+    transition: transform 0.2s;  /* Smooth scaling animation */
+  }
+  #message, #level {
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    margin: 10px;
+  }
+  .trash {
+    position: absolute;
+    cursor: grab;
+    transition: transform 0.2s;
+  }
+  /* Wiggle effect when grabbed */
+  .wiggle {
+    animation: wiggle 0.3s infinite;
+  }
+  @keyframes wiggle {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+  }
+  /* Responsive adjustments for mobile */
+  @media (max-width: 768px) {
+    h1 { font-size: 20px; }
+    #bin { font-size: 50px; }
+    .trash { font-size: 40px !important; }
+  }
